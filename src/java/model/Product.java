@@ -10,7 +10,7 @@ public class Product {
    int id;
      String name;
      String imageUrl;
-     double price;
+     int price;
      String tiltle;
      String description;
      int sell_ID;
@@ -19,7 +19,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, String imageUrl, double price, String tiltle, String description, int sell_ID, int categoryId) {
+    public Product(int id, String name, String imageUrl, int price, String tiltle, String description, int sell_ID, int categoryId) {
         this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
@@ -57,11 +57,11 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

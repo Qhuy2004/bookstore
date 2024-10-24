@@ -120,7 +120,7 @@
                                 <input name="price" type="text" class="form-control" pattern="^\d+\.*\d*$" title="Please Enter Double Value!" required>
                             </div>
                             <div class="form-group">
-                                <label>Tiêu đề</label>
+                                <label>Thể loại</label>
                                 <textarea name="title" class="form-control" required></textarea>
                             </div>
                             <div class="form-group">

@@ -31,7 +31,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -39,7 +39,7 @@ public class ProductDAO extends DBContext {
                 list.add(product);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
@@ -57,7 +57,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -86,7 +86,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -127,7 +127,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -152,7 +152,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -177,7 +177,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));
@@ -272,7 +272,7 @@ public class ProductDAO extends DBContext {
                 product.setId(rs.getInt(1));
                 product.setName(rs.getString(2));
                 product.setImageUrl(rs.getString(3));
-                product.setPrice(rs.getDouble(4));
+                product.setPrice(rs.getInt(4));
                 product.setTiltle(rs.getString(5));
                 product.setDescription(rs.getString(6));
                 product.setCategoryId(rs.getInt(7));

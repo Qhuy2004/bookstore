@@ -47,7 +47,7 @@ public class CheckOutController extends HttpServlet {
             }
 
             //tinh tong tien
-            double totalMoney = 0;
+            int totalMoney = 0;
             for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
                 Integer productId = entry.getKey();
                 Cart cart = entry.getValue();
@@ -106,7 +106,7 @@ public class CheckOutController extends HttpServlet {
         }
 
         //tinh tong tien
-        double totalPrice = 0;
+        int totalPrice = 0;
         for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
             Integer productId = entry.getKey();
             Cart cart = entry.getValue();
@@ -116,7 +116,7 @@ public class CheckOutController extends HttpServlet {
         }
 
         Account a = (Account)request.getSession().getAttribute("acc");
-        Order order = new Order(a.getUid(),totalPrice,note,shippingId);
+        Order order = new Order(a.getUid(),  totalPrice,note,shippingId);
                 
         int orderId = new OrderDAO().createReturnId(order);
         //Lưu OrderDetail

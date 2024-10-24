@@ -59,7 +59,7 @@ public class OrderDAO extends DBContext{
                 Order order = new Order();
                 order.setId(rs.getInt(1));
                 order.setAccountId(rs.getInt(2));
-                order.setTotalPrice(rs.getDouble(3));
+                order.setTotalPrice(rs.getInt(3));
                 order.setNote(rs.getString(4));
                 order.setCreatedDate(rs.getString(5));
                 order.setShippingId(rs.getInt(6));

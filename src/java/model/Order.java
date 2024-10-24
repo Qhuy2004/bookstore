@@ -12,7 +12,7 @@ public class Order {
     
     private int id;
     private int accountId;
-    private double totalPrice;
+    private int totalPrice;
     private String note;
     private String createdDate;
     private int shippingId;
@@ -20,7 +20,7 @@ public class Order {
     public Order() {
     }
 
-    public Order( int accountId, double totalPrice, String note, int shippingId) {
+    public Order( int accountId, int totalPrice, String note, int shippingId) {
         this.accountId = accountId;
         this.totalPrice = totalPrice;
         this.note = note;
@@ -48,11 +48,11 @@ public class Order {
         this.accountId = accountId;
     }
 
-    public double getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 

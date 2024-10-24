@@ -44,7 +44,7 @@ public class CartController extends BaseRequiredAuthenController {
             }
             
             //tinh tong tien
-            double totalMoney = 0;
+            int totalMoney = 0;
             for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
                 Integer productId = entry.getKey();
                 Cart cart = entry.getValue();
