@@ -1,8 +1,4 @@
-<%-- 
-    Document   : change-newpassword
-    Created on : May 29, 2022, 10:15:14 PM
-    Author     : Admin
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

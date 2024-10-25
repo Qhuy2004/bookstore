@@ -1,8 +1,3 @@
-<%-- 
-    Document   : EditAccount
-    Created on : Mar 2, 2022, 9:09:03 PM
-    Author     : Admin
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

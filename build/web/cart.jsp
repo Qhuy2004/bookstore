@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cart
-    Created on : Feb 23, 2022, 10:07:09 PM
-    Author     : Admin
---%>
+
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

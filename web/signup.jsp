@@ -1,8 +1,3 @@
-<%-- 
-    Document   : signup
-    Created on : Oct 22, 2024, 8:09:16 PM
-    Author     : phuoc
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

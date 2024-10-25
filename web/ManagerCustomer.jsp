@@ -1,8 +1,4 @@
-<%-- 
-    Document   : ManagerCustomer
-    Created on : Feb 27, 2022, 10:49:45 PM
-    Author     : Admin
---%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
