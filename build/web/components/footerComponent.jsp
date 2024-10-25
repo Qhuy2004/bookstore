@@ -104,7 +104,7 @@
               <p><i class="fas fa-map-marker-alt pe-2"></i>Thái Bình</p>
             </li>
             <li>
-              <p><i class="fas fa-phone pe-2"></i>+84337259823</p>
+              <p><i class="fas fa-phone pe-2"></i>+84 33 725 98 23</p>
             </li>
             <li>
               <p><i class="fas fa-envelope pe-2 mb-0"></i>huybqhe180599@fpt.edu.vn</p>
