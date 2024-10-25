@@ -81,7 +81,7 @@ public class forgetPasswordController extends HttpServlet {
         if (!pass.equals(repass)) {
             request.setAttribute("mess", "Mật khẩu không khớp");
             request.getRequestDispatcher("change-newpassword.jsp").forward(request, response);
-            return;
+           // return;
         }
         
         if (pass.equals(repass) && adb.checkAccountExist(user) != null) {
