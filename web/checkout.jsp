@@ -81,10 +81,10 @@
                                 <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="note" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="address" name="email" aria-describedby="emailHelp">
+                                <label for="note" class="form-label">Note</label>
+                                <textarea name="note" class="form-control" required></textarea>
                             </div>
-                            <button onclick="" type="submit" class="btn btn-primary w-100">OK</button>
+                            <button  type="submit" class="btn btn-primary w-100">OK</button>
                         </form>
                     </div>
                 </div>

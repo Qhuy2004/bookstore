@@ -117,12 +117,11 @@ public class CheckOutController extends HttpServlet {
 
         Account a = (Account)request.getSession().getAttribute("acc");
         Order order = new Order(a.getUid(),  totalPrice,note,shippingId);
-                
+             
         int orderId = new OrderDAO().createReturnId(order);
         //Lưu OrderDetail
-
+        
         new OrderDetailDAO().saveCart(orderId, carts);
-
         session.removeAttribute("carts");
         request.setAttribute("cartss", carts);
         request.setAttribute("totalPrice", totalPrice);

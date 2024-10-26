@@ -45,12 +45,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="manager">Quản lý sản phẩn</a>
                     </li>
-                </c:if>
-                <c:if test="${sessionScope.acc.isAdmin == 1}">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="managerCustomer">Quản lý khách hàng</a>
-                    </li>
-                </c:if>
+                    </c:if>
+              
+               
 
 
             </ul>

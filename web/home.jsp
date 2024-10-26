@@ -49,21 +49,7 @@
             </div>
         </header>-->
         <!-- Section-->
-        <style>
-            .back-image{
-                background: url("https://th.bing.com/th/id/OIP.hKxoFww1JjcAwfr4p6Ej3gAAAA?w=294&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7");
-               height: 100vh;
-                width: 100%;
-                 background-size: cover ;
-                background-repeat: no-repeat;
-                
-            }
-            
-        </style>
-        <div class="container-fluid back-image">
-            <h1 class="text-center" style="color: white" >Book Store</h1>
-            <h2 class="text-center" style="color: white" >Chào mừng mọi người ghé thăm</h2>
-        </div>
+        
         <section class="py-5">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row">
