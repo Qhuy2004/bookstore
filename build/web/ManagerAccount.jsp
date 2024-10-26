@@ -1,3 +1,5 @@
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -48,7 +50,7 @@
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
-                        <h2>Quản lý <b>khách hàng</b></h2>   
+                        <h2>Quản lý <b>tài khoản</b></h2>   
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
@@ -61,17 +63,15 @@
                                                             </span>
                                                         </th>-->
                             <th>ID</th>
-                            <th>AccountID</th>
-                            <th>ProductID</th>
-                            <th>Họ Và Tên</th>
-                            <th>Số điện thoại</th>
-                            <th>Địa chỉ</th>
-                            <th>Email</th>
-                            <th>Ngày mua</th>
+                            <th>User</th>
+                            <th>Pass</th>
+                            <th>IsSell</th>
+                            <th>Active</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${c}" var="p">
+                        <c:forEach items="${accounts}" var="p">
                             <tr>
                                 <!--                                <td>
                                                                     <span class="custom-checkbox">
@@ -79,17 +79,24 @@
                                                                         <label for="checkbox1"></label>
                                                                     </span>
                                                                 </td>-->
-                                <td>${p.customerID}</td>
-                                <td>${p.accountID}</td>
-                                <td>${p.productID}</td>
-                                <td>${p.name}</td>
-                                <td>${p.phone}</td>
-                                <td>${p.address}</td>
-                                <td>${p.email}</td>
-                                <td>${p.dateBuy}</td>
+                                <td>${p.uid}</td>
+                                <td>${p.user}</td>
+                                <td>${p.pass}</td>
+                                <td>${p.isSell}</td>
                                 <td>
 
-                                  
+                                    <c:choose>
+                                        <c:when test="${p.active}">
+                                            <i class="bi bi-toggle-on"></i>
+                                        </c:when>    
+                                        <c:otherwise>
+                                            <i class="bi bi-toggle2-off"></i>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                <td>
+                                    <a href="loadAccount?pid=${p.uid}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                </td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -102,6 +109,6 @@
         </div>
 
 
-        <!--<script src="js/ManagerProduct.js" type="text/javascript"></script>-->
+        <script src="js/ManagerProduct.js" type="text/javascript"></script>
     </body>
 </html>

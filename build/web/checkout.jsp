@@ -22,6 +22,8 @@
             />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+       
+
     </head>
     <body>
         <%@include file="components/navBarComponent.jsp" %>
@@ -61,9 +63,11 @@
                         </table>
                         <h3>Tổng tiền: ${totalMoney} VND</h3>
                     </div>
+
                     <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
                         <h3>Thông tin khách hàng</h3>
                         <form action="checkout" method="POST">
+                           
                             <div class="mb-3">
                                 <label for="name" class="form-label">Họ tên</label>
                                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
@@ -77,10 +81,10 @@
                                 <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="note" class="form-label">Note</label>
-                                <textarea class="form-control" id="note" name="note" rows="3"></textarea>
+                                <label for="note" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="address" name="email" aria-describedby="emailHelp">
                             </div>
-                            <button type="submit" class="btn btn-primary w-100">OK</button>
+                            <button onclick="" type="submit" class="btn btn-primary w-100">OK</button>
                         </form>
                     </div>
                 </div>
