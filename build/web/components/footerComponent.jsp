@@ -104,10 +104,10 @@
               <p><i class="fas fa-map-marker-alt pe-2"></i>Thái Bình</p>
             </li>
             <li>
-              <p><i class="fas fa-phone pe-2"></i>+84 33 725 98 23</p>
+              <p><i class="fas fa-phone pe-2"></i>+84 12 345 67 89</p>
             </li>
             <li>
-              <p><i class="fas fa-envelope pe-2 mb-0"></i>huybqhe180599@fpt.edu.vn</p>
+              <p><i class="fas fa-envelope pe-2 mb-0"></i>example@gmail.com</p>
             </li>
           </ul>
         </div>
@@ -120,7 +120,7 @@
     <!-- Copyright -->
     <div class="text-center " >
       © 2024 Copyright:
-      <span>Bùi Quang Huy</span>
+      <span>HuyBQ</span>
     </div>
     
 </footer>
