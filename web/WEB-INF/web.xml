@@ -72,10 +72,7 @@
         <servlet-name>managerCustomer</servlet-name>
         <url-pattern>/managerCustomer</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteCategory</servlet-name>
-        <url-pattern>/delete</url-pattern>
-    </servlet-mapping>
+   
     <session-config>
         <session-timeout>
             30
