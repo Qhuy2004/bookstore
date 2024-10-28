@@ -78,7 +78,9 @@
                                 <td>${c.cname}</td>
                              
                                 <td>
+                                   
                                     <a href="loadCategory?cid=${c.cid}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    
                                 </td>
                             </tr>
                         </c:forEach>

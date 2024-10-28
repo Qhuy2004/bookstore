@@ -21,11 +21,11 @@
                 width: 200px;
                 height: 120px;
             }
-            
+
         </style>
     <body>
         <div class="container">
-            
+
             <div id="editEmployeeModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -39,15 +39,16 @@
                                     <label>ID</label>
                                     <input value="${category.cid}" name="id" type="text" class="form-control" readonly required>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label>Tên</label>
                                     <input value="${category.cname}" name="name" type="text" class="form-control" required>
                                 </div>
-                                
+
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-success" value="Edit">
+                                <a class="btn btn-primary" href="managerCategory">Quay lại</a>
+                                <input type="submit" class="btn btn-success" value="Sửa">
                             </div>
                         </form>
                     </div>

@@ -79,6 +79,15 @@ public class CategoryDAO extends DBContext { //thao tác với bảng category
         }
 
     }
+    public void DeleteCategoryByID(int id){
+        String sql = "Delete from Category where cid = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+        }
+    }
 }
 
 

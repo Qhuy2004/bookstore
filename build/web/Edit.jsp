@@ -68,7 +68,9 @@
 
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-success" value="Edit">
+                                <a class="btn btn-primary" href="manager">Quay lại</a>
+                                <input type="submit" class="btn btn-success" value="Sửa">
+                                
                             </div>
                         </form>
                     </div>
