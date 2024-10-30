@@ -11,13 +11,13 @@ public class OrderDetail {
     private int orderId;
     private String productName;
     private String productImage;
-    private double productPrice;
+    private int productPrice;
     private int quantity;
 
     public OrderDetail() {
     }
 
-    public OrderDetail(int id, int orderId, String productName, String productImage, double productPrice, int quantity) {
+    public OrderDetail(int id, int orderId, String productName, String productImage, int productPrice, int quantity) {
         this.id = id;
         this.orderId = orderId;
         this.productName = productName;
@@ -58,11 +58,11 @@ public class OrderDetail {
         this.productImage = productImage;
     }
 
-    public double getProductPrice() {
+    public int getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(int productPrice) {
         this.productPrice = productPrice;
     }
 

@@ -260,6 +260,29 @@ public class ProductDAO extends DBContext {
     public List<Product> getAllProductsLast() {
         List<Product> list = new ArrayList<>();
         try {
+            String sql = "SELECT TOP 4 * FROM Product ORDER BY ID asc";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt(1));
+                product.setName(rs.getString(2));
+                product.setImageUrl(rs.getString(3));
+                product.setPrice(rs.getInt(4));
+                product.setTiltle(rs.getString(5));
+                product.setDescription(rs.getString(6));
+                product.setCategoryId(rs.getInt(7));
+                product.setSell_ID(rs.getInt(8));
+                list.add(product);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
+     public List<Product> getAllNewProducts() {
+        List<Product> list = new ArrayList<>();
+        try {
             String sql = "SELECT TOP 4 * FROM Product ORDER BY ID desc";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
@@ -275,12 +298,35 @@ public class ProductDAO extends DBContext {
                 product.setSell_ID(rs.getInt(8));
                 list.add(product);
             }
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return list;
     }
-    
+     public List<Product> getNewProductsByCateID(int c) {
+        List<Product> list = new ArrayList<>();
+        try {
+            String sql = "SELECT TOP 2 * FROM Product where cateID = ? ORDER BY ID desc";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, c);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Product product = new Product();
+                product.setId(rs.getInt(1));
+                product.setName(rs.getString(2));
+                product.setImageUrl(rs.getString(3));
+                product.setPrice(rs.getInt(4));
+                product.setTiltle(rs.getString(5));
+                product.setDescription(rs.getString(6));
+                product.setCategoryId(rs.getInt(7));
+                product.setSell_ID(rs.getInt(8));
+                list.add(product);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return list;
+    }
     public static void main(String[] args) {
         ProductDAO a = new ProductDAO();
         List<Product> list = a.getAllProducts();

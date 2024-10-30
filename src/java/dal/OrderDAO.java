@@ -41,7 +41,7 @@ public class OrderDAO extends DBContext{
                 return rs.getInt(1);
             }
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return 0;
@@ -60,14 +60,28 @@ public class OrderDAO extends DBContext{
                 order.setNote(rs.getString(4));
                 order.setCreatedDate(rs.getString(5));
                 order.setShippingId(rs.getInt(6));
+                order.getStatus(rs.getInt(7));
                 
                 Orders.add(order);
             }
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(CategoryDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return Orders;
     }
+    public void updateOrderStatus(int orderId, int status) {
+    String sql = "UPDATE Orders SET status = ? WHERE id = ?";
+    try  {
+        PreparedStatement stm = connection.prepareStatement(sql);
+       // stm.setString(1,"status");
+        stm.setInt(1, status);
+        stm.setInt(2, orderId);
+        stm.executeUpdate();
+    } catch (SQLException ex) {
+        Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+
     
     }
         

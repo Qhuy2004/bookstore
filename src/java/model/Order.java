@@ -12,6 +12,7 @@ public class Order {
     private String note;
     private String createdDate;
     private int shippingId;
+    private int status;
 
     public Order() {
     }
@@ -21,6 +22,26 @@ public class Order {
         this.totalPrice = totalPrice;
         this.note = note;
         this.shippingId = shippingId;
+       
+    }
+
+    public Order(int id, int accountId, int totalPrice, String note, String createdDate, int shippingId, int status) {
+        this.id = id;
+        this.accountId = accountId;
+        this.totalPrice = totalPrice;
+        this.note = note;
+        this.createdDate = createdDate;
+        this.shippingId = shippingId;
+        this.status = status;
+    }
+    
+
+    public int getStatus(int aInt) {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     @Override

@@ -61,7 +61,7 @@ public class OrderDetailDAO extends DBContext {
                 order.setOrderId(rs.getInt(2));
                 order.setProductName(rs.getString(3));
                 order.setProductImage(rs.getString(4));
-                order.setProductPrice(rs.getDouble(5));
+                order.setProductPrice(rs.getInt(5));
                 order.setQuantity(rs.getInt(6));
 
                 OrderDetails.add(order);

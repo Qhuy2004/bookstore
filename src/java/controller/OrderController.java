@@ -1,23 +1,26 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package controller;
 
-
-import dal.CategoryDAO;
-import dal.ProductDAO;
+import dal.OrderDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import model.Category;
-import model.Product;
+import java.util.List;
+import model.Order;
 
-
-public class HomeController extends HttpServlet {
+/**
+ *
+ * @author phuoc
+ */
+@WebServlet(name = "OrderController", urlPatterns = {"/orders"})
+public class OrderController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,32 +34,18 @@ public class HomeController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        final int PAGE_SIZE = 7;
-
-        List<Category> listCategories = new CategoryDAO().getAllCategories();
-        request.setAttribute("listCategories", listCategories);
-        
-        int page = 1;
-        String pageStr = request.getParameter("page");
-        if (pageStr != null) {
-            page = Integer.parseInt(pageStr);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet OrderController</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet OrderController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
-        ProductDAO productDAO = new ProductDAO();
-        List<Product> listProducts = productDAO.getProductsWithPagging(page, PAGE_SIZE);
-        int totalProducts = productDAO.getTotalProducts();
-        int totalPage = totalProducts / PAGE_SIZE; //1
-        if (totalProducts % PAGE_SIZE != 0) {
-            totalPage += 1;
-        }
-        List<Product> p = productDAO.getAllNewProducts();
-        request.setAttribute("p", p);
-        request.setAttribute("page", page);
-        request.setAttribute("totalPage", totalPage);
-        request.setAttribute("listProducts", listProducts);
-        
-        request.getSession().setAttribute("urlHistory", "home");
-        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -71,7 +60,11 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        // processRequest(request, response);
+        OrderDAO orderDAO = new OrderDAO();
+        List<Order> orders = orderDAO.getAllOrder();
+        request.setAttribute("orders", orders);
+        request.getRequestDispatcher("order.jsp").forward(request, response);
     }
 
     /**
@@ -85,7 +78,20 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        // processRequest(request, response);
+        
+                
+        String order = request.getParameter("orderId");
+        String status = request.getParameter("status");
+        try {
+            int orderId = Integer.parseInt(order);
+            int newStatus = Integer.parseInt(status);
+            OrderDAO orderDAO = new OrderDAO();
+            orderDAO.updateOrderStatus(orderId, newStatus);
+        } catch (NumberFormatException e) {
+        }
+
+        response.sendRedirect("orders");
     }
 
     /**

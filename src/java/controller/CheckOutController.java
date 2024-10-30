@@ -1,6 +1,4 @@
-
 package controller;
-
 
 import dal.OrderDAO;
 import dal.OrderDetailDAO;
@@ -95,17 +93,17 @@ public class CheckOutController extends HttpServlet {
 
         //lưu vào database
         //Lưu Shipping
-        Shipping shipping = new Shipping( name, phone, address);
+       Shipping shipping = new Shipping( name, phone, address);
 
-        int shippingId = new ShippingDAO().createReturnId(shipping); //trả về id tự tăng của bản ghi vừa lưu vào database
+       int shippingId = new ShippingDAO().createReturnId(shipping); //trả về id tự tăng của bản ghi vừa lưu vào database
         //Lưu Order
         HttpSession session = request.getSession();
         Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
         if (carts == null) {
             carts = new LinkedHashMap<>();
-        }
+       }
 
-        //tinh tong tien
+       //tinh tong tien
         int totalPrice = 0;
         for (Map.Entry<Integer, Cart> entry : carts.entrySet()) {
             Integer productId = entry.getKey();
@@ -126,6 +124,8 @@ public class CheckOutController extends HttpServlet {
         request.setAttribute("cartss", carts);
         request.setAttribute("totalPrice", totalPrice);
         request.getRequestDispatcher("thank").forward(request, response);
+        
+
     }
 
     /**
