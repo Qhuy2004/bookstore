@@ -45,7 +45,7 @@
             </tbody>
            
         </table>
-        <a href="orders">Quay lại</a>
+        <a href="orders" class="btn btn-success">Quay lại</a>
     </div>
      
 </body>

@@ -68,7 +68,7 @@
                     </li>
 
                 </c:if>
-                <c:if test="${sessionScope.acc.isAdmin == 1 || sessionScope.acc.isSell == 1}">
+                <c:if test="${sessionScope.acc.isAdmin == 1}">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="manager">Quản lý sản phẩm</a>
                     </li>
@@ -76,7 +76,12 @@
                    
                     <c:if test="${sessionScope.acc.isAdmin == 1}">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="orders">Quản lý đặt hàng</a>
+                        <a class="nav-link active" aria-current="page" href="orders">Quản lý đơn hàng</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.acc.isAdmin == 1 || sessionScope.acc.isSell == 1}">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="statistic">Thống kê</a>
                     </li>
                 </c:if>
                 
