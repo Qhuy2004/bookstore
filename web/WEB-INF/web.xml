@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>controller.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/orders</url-pattern>
+        <url-pattern>/managerAccount</url-pattern>
+        <url-pattern>/managerCategory</url-pattern>
+        <url-pattern>/manager</url-pattern>
+        <url-pattern>/statistic</url-pattern>
+        <url-pattern>/shipping</url-pattern>
+         <url-pattern>/orderdetail</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>HomeController</servlet-name>
         <servlet-class>controller.HomeController</servlet-class>
@@ -72,7 +86,6 @@
         <servlet-name>managerCustomer</servlet-name>
         <url-pattern>/managerCustomer</url-pattern>
     </servlet-mapping>
-   
     <session-config>
         <session-timeout>
             30

@@ -43,7 +43,7 @@
                                         </select>-->
                                     
                                <td>
-                                <a class="btn btn-primary" href="orderdetail?orderId=${order.id}">Detail</a>
+                                <a class="btn btn-primary" href="orderdetail?orderId=${order.id}">Chi tiết</a>
 <!--                                <button type="submit" class="btn btn-primary">Update</button>-->
                             </td>
                             <td>

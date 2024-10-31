@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/New%20folder/Project/src/java/controller/OrderController.java</file>
-            <file>file:/D:/New%20folder/Project/src/java/controller/OrderDetail.java</file>
-            <file>file:/D:/New%20folder/Project/src/java/model/Satistic.java</file>
+            <file>file:/D:/New%20folder/Project/src/java/model/Order.java</file>
             <file>file:/D:/New%20folder/Project/web/order.jsp</file>
-            <file>file:/D:/New%20folder/Project/web/orderDetail.jsp</file>
             <file>file:/D:/New%20folder/Project/src/java/controller/ShippingController.java</file>
-            <file>file:/D:/New%20folder/Project/src/java/dal/StatisticDAO.java</file>
-            <file>file:/D:/New%20folder/Project/src/java/controller/Statistic.java</file>
-            <file>file:/D:/New%20folder/Project/web/statistic.jsp</file>
-            <file>file:/D:/New%20folder/Project/web/components/navBarComponent.jsp</file>
             <file>file:/D:/New%20folder/Project/web/shiping.jsp</file>
+            <file>file:/D:/New%20folder/Project/src/java/dal/ShippingDAO.java</file>
         </group>
     </open-files>
 </project-private>

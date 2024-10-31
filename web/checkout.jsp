@@ -70,15 +70,15 @@
                            
                             <div class="mb-3">
                                 <label for="name" class="form-label">Họ tên</label>
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Địa chỉ</label>
-                                <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp">
+                                <input type="text" class="form-control" id="address" name="address" aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="note" class="form-label">Note</label>

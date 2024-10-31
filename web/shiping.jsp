@@ -10,15 +10,15 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="mt-5">Shipping Management</h2>
+        <h2 class="mt-5">Quản lý giao hàng</h2>
         <table class="table mt-3">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Status</th>
+                    <th>Họ và tên</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Trạng thái</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -37,7 +37,7 @@
                                     <option value="Pending" ${shipping.status == 'Pending' ? 'selected' : ''}>Pending</option>
                                     <option value="Shipped" ${shipping.status == 'Shipped' ? 'selected' : ''}>Shipped</option>
                                 </select>
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Cập nhật</button>
                             </form>
                         </td>
                     </tr>

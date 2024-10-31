@@ -87,6 +87,7 @@ public class LoginController extends HttpServlet {
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("acc", a);
+            session.setAttribute("isAdmin", a.getIsAdmin());
             Cookie u = new Cookie("userC", user);
             Cookie p = new Cookie("passC", pass);
             u.setMaxAge(60*60*7);

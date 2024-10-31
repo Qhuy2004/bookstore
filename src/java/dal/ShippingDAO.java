@@ -47,7 +47,7 @@ public class ShippingDAO extends DBContext {
 
     public List<Shipping> getAllShipping() {
         List<Shipping> shippingList = new ArrayList<>();
-        String sql = "select * from Shipping";
+        String sql = "select * from Shipping ";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
