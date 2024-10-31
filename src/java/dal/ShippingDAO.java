@@ -75,4 +75,26 @@ public class ShippingDAO extends DBContext {
         } catch (SQLException e) {
         }
     }
+    public Shipping getShippingByOrderId(int orderId) {
+    Shipping shipping = null;
+    String sql = "SELECT s.* FROM Shipping s " +
+                 "INNER JOIN Orders o ON o.shipping_id = s.id " +
+                 "WHERE o.id = ?";
+    try {
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setInt(1, orderId);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            shipping = new Shipping();
+            shipping.setId(rs.getInt("id"));
+            shipping.setName(rs.getString("name"));
+            shipping.setPhone(rs.getString("phone"));
+            shipping.setAddress(rs.getString("address"));
+            shipping.setStatus(rs.getString("status"));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return shipping;
+}
 }

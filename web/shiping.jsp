@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="shipping" items="${shipping}">
+                
                     <tr>
                         <td>${shipping.id}</td>
                         <td>${shipping.name}</td>
@@ -41,7 +41,7 @@
                             </form>
                         </td>
                     </tr>
-                </c:forEach>
+                
             </tbody>
            
         </table>

@@ -62,8 +62,14 @@ public class ShippingController extends HttpServlet {
             throws ServletException, IOException {
         // processRequest(request, response);
         ShippingDAO dao = new ShippingDAO();
-        List<Shipping> list = dao.getAllShipping();
-        request.setAttribute("shipping", list);
+        String id = request.getParameter("orderId");
+        try {
+            int orderId = Integer.parseInt(id);
+            Shipping list = dao.getShippingByOrderId(orderId);
+            request.setAttribute("shipping", list);
+        } catch (NumberFormatException e) {
+        }
+
         request.getRequestDispatcher("shiping.jsp").forward(request, response);
     }
 
@@ -79,11 +85,17 @@ public class ShippingController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // processRequest(request, response);
-        int shippingId = Integer.parseInt(request.getParameter("id"));
+        String id = request.getParameter("id");
         String newStatus = request.getParameter("status");
-        ShippingDAO dao = new ShippingDAO();
-        dao.updateStatus(shippingId, newStatus);
-        response.sendRedirect("shipping");  // Redirect để làm mới danh sách
+        try {
+            int shippingId = Integer.parseInt(id);
+            ShippingDAO dao = new ShippingDAO();
+            dao.updateStatus(shippingId, newStatus);
+            response.sendRedirect("shipping?orderId="+shippingId);
+        } catch (NumberFormatException e) {
+        }
+        
+        // Redirect để làm mới danh sách
     }
 
     /**

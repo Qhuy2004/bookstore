@@ -1,4 +1,6 @@
 
+
+
 package controller;
 
 import java.io.IOException;
@@ -27,14 +29,16 @@ public class UpdateCartQuantityController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+
             int productId = Integer.parseInt(request.getParameter("productId"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
-
+            
             HttpSession session = request.getSession();
             Map<Integer, Cart> carts = (Map<Integer, Cart>) session.getAttribute("carts");
             if (carts == null) {
@@ -59,6 +63,7 @@ public class UpdateCartQuantityController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -73,6 +78,7 @@ public class UpdateCartQuantityController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -84,9 +90,13 @@ public class UpdateCartQuantityController extends HttpServlet {
      *
      * @return a String containing servlet description
      */
+
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
+}// </editor-fold>
 
-}
+
+
+

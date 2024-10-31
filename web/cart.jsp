@@ -23,10 +23,13 @@
             />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        
+
+
     </head>
     <body>
         <%@include file="components/navBarComponent.jsp" %>
-
+        
         <!-- Product section-->
         <section class="py-5">
             <div class="container" style="min-height: 1000px">
@@ -53,13 +56,13 @@
                                 <form action="update-quantity">
                                     <tr>
                                     <input type="hidden" name="productId" value="${C.value.product.id}"/>
-                                        <th scope="row">${C.value.product.id}</th>
-                                         <td><img src="${C.value.product.imageUrl}" width="50"/></td>
-                                        <td>${C.value.product.name}</td>                                     
-                                        <td>${C.value.product.price}</td>
-                                        <td><input onchange="this.form.submit()" type="number" name="quantity" value="${C.value.quantity}" /></td>
-                                        <td>${C.value.product.price*C.value.quantity}</td>
-                                        <td><a href="delete-cart?productId=${C.value.product.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i>Delete</a></td>
+                                    <th scope="row">${C.value.product.id}</th>
+                                    <td><img src="${C.value.product.imageUrl}" width="50"/></td>
+                                    <td>${C.value.product.name}</td>                                     
+                                    <td>${C.value.product.price}</td>
+                                    <td><input type="number"  name="quantity" value="${C.value.quantity}" required pattern="^[1-9]\\d*$"  title="Please Enter Integer Value!" onchange="this.form.submit()" min="1"/></td>
+                                    <td>${C.value.product.price*C.value.quantity}</td>
+                                    <td><a href="delete-cart?productId=${C.value.product.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i>Xóa</a></td>
                                     </tr>
                                 </form>
                             </c:forEach>
