@@ -45,7 +45,9 @@
                                <td>
                                 <a class="btn btn-primary" href="orderdetail?orderId=${order.id}">Detail</a>
 <!--                                <button type="submit" class="btn btn-primary">Update</button>-->
-                                </form>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="shipping">Ship</a>
                             </td>
 
                         </tr>

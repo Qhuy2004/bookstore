@@ -31,7 +31,7 @@ public class OrderDAO extends DBContext{
                     + "           (?,?,?,?)";
             PreparedStatement stm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stm.setInt(1, order.getAccountId());
-            stm.setDouble(2, order.getTotalPrice());
+            stm.setInt(2, order.getTotalPrice());
             stm.setString(3, order.getNote());
             stm.setInt(4, order.getShippingId());
             stm.executeUpdate();
@@ -60,7 +60,7 @@ public class OrderDAO extends DBContext{
                 order.setNote(rs.getString(4));
                 order.setCreatedDate(rs.getString(5));
                 order.setShippingId(rs.getInt(6));
-                order.getStatus(rs.getInt(7));
+                
                 
                 Orders.add(order);
             }
@@ -69,18 +69,7 @@ public class OrderDAO extends DBContext{
         }
         return Orders;
     }
-    public void updateOrderStatus(int orderId, int status) {
-    String sql = "UPDATE Orders SET status = ? WHERE id = ?";
-    try  {
-        PreparedStatement stm = connection.prepareStatement(sql);
-       // stm.setString(1,"status");
-        stm.setInt(1, status);
-        stm.setInt(2, orderId);
-        stm.executeUpdate();
-    } catch (SQLException ex) {
-        Logger.getLogger(OrderDAO.class.getName()).log(Level.SEVERE, null, ex);
-    }
-}
+    
 
     
     }

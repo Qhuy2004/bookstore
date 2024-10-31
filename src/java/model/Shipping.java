@@ -10,7 +10,7 @@ public class Shipping {
     private String name;
     private String phone;
     private String address;
-
+    private String status;
     public Shipping() {
     }
 
@@ -18,6 +18,23 @@ public class Shipping {
         this.name = name;
         this.phone = phone;
         this.address = address;
+    }
+
+    public Shipping(int id, String name, String phone, String address, String status) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.status = status;
+    }
+    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getId() {
