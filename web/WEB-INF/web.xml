@@ -12,7 +12,7 @@
         <url-pattern>/manager</url-pattern>
         <url-pattern>/statistic</url-pattern>
         <url-pattern>/shipping</url-pattern>
-         <url-pattern>/orderdetail</url-pattern>
+        <url-pattern>/orderdetail</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>HomeController</servlet-name>

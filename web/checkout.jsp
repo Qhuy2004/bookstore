@@ -74,7 +74,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp"  pattern="^[0-9]{10}" 
+                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp"  pattern="^0[0-9]{9}" 
                                        title="Vui lòng nhập đúng 10 chữ số"  required>
                             </div>
                             <div class="mb-3">
