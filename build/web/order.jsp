@@ -54,6 +54,9 @@
                     </c:forEach>
                 </tbody>
             </table>
+            <div class="text-center mt-3">
+            <a class="btn btn-success " href="home">Trang chủ</a>
+            </div>
         </div>
 
         <%@include file="components/footerComponent.jsp" %>

@@ -44,7 +44,7 @@
     <body>
 
         <div class="container">
-            <h1>Thống kê Doanh số của một ngày</h1>
+            <h1>Thống kê Doanh số theo ngày</h1>
             <div class="statistic">
                 <div><strong>Số đơn hàng:</strong> <%= request.getAttribute("totalOrders") %></div>
             </div>

@@ -109,7 +109,7 @@ public class AdminFilter implements Filter {
                 && (int) session.getAttribute("isAdmin") == 1) {
             chain.doFilter(request, response); // Admin, cho phép truy cập
         } else {
-            res.sendRedirect(req.getContextPath() + "/no-access.jsp"); // Chuyển hướng nếu không phải Admin
+            res.sendRedirect(req.getContextPath() + "/index.html"); // Chuyển hướng nếu không phải Admin
         }
     }
 
