@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <%@include file="components/navBarComponent.jsp" %>
+   
 
     <div class="container mt-5">
         <h2 class="text-center">Chi tiết Đơn hàng #${orderId}</h2>
@@ -37,11 +37,11 @@
                 </c:forEach>
             </tbody>
         </table>
-        <div class="text-center mt-3">
-            <a href="orders" class="btn btn-secondary">Quay lại</a>
-        </div>
+        
+            <a href="orders" class="btn btn-success">Quay lại</a>
+       
     </div>
 
-    <%@include file="components/footerComponent.jsp" %>
+   
 </body>
 </html>

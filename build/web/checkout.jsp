@@ -22,7 +22,7 @@
             />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-       
+
 
     </head>
     <body>
@@ -67,14 +67,15 @@
                     <div class="col-md-4" style="border: 1px solid #ccc; border-radius: 5px; padding: 1rem">
                         <h3>Thông tin khách hàng</h3>
                         <form action="checkout" method="POST">
-                           
+
                             <div class="mb-3">
                                 <label for="name" class="form-label">Họ tên</label>
                                 <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" required>
+                                <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp"  pattern="^[0-9]{10}" 
+                                       title="Vui lòng nhập đúng 10 chữ số"  required>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Địa chỉ</label>
