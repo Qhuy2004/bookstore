@@ -23,13 +23,14 @@
             />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        
 
+
+       
 
     </head>
     <body>
         <%@include file="components/navBarComponent.jsp" %>
-        
+
         <!-- Product section-->
         <section class="py-5">
             <div class="container" style="min-height: 1000px">
@@ -39,37 +40,60 @@
                     </c:when>
                     <c:otherwise>
                         <h3>Danh sách sản phẩm</h3>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Hình ảnh</th>
-                                    <th scope="col">Tên</th>
-                                    <th scope="col">Giá</th>
-                                    <th scope="col">Số lượng</th>
-                                    <th scope="col">Tổng tiền</th>
-                                    <th scope="col">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <c:forEach items="${carts}" var="C">
-                                <form action="update-quantity">
+                        <c:if test="${mess != null}">
+                            <div class="d-block mx-4 mb-3 mb-lg-4  text-danger"><b>${mess}</b></div>
+                                </c:if>
+                        <form action="update-quantity">
+                            <table class="table">
+                                <thead>
                                     <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Hình ảnh</th>
+                                        <th scope="col">Tên</th>
+                                        <th scope="col">Giá</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Tổng tiền</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <c:set var="allQuantitiesValid" value="true" scope="session" />
+                                    <c:forEach items="${carts}" var="C">
+
+                                        <tr>
                                     <input type="hidden" name="productId" value="${C.value.product.id}"/>
                                     <th scope="row">${C.value.product.id}</th>
                                     <td><img src="${C.value.product.imageUrl}" width="50"/></td>
                                     <td>${C.value.product.name}</td>                                     
                                     <td>${C.value.product.price}</td>
-                                    <td><input type="number"  name="quantity" value="${C.value.quantity}" required pattern="^[1-9]\\d*$"  title="Please Enter Integer Value!" onchange="this.form.submit()" min="1"/></td>
-                                    <td>${C.value.product.price*C.value.quantity}</td>
+                                    <td>
+                                        <input onchange="validateAndSubmit(this)" type="number" name="quantity" min="1"  value="${C.value.quantity}" required />
+                                    </td>
+                                    <td>${C.value.product.price * C.value.quantity} VNĐ</td>
+                                    <script>
+                                        function validateAndSubmit(input) {
+                                            if (input.value <= 0) {
+                                                alert("Số lượng phải lớn hơn 0!");
+                                                input.value = 1;
+                                            } else {
+                                                input.form.submit();
+                                            }
+                                        }
+                                    </script>
                                     <td><a href="delete-cart?productId=${C.value.product.id}" class="btn btn-outline-danger"><i class="bi bi-trash"></i>Xóa</a></td>
                                     </tr>
-                                </form>
-                            </c:forEach>
-                            </tbody>
-                        </table>
-                        <h3>Tổng tiền: ${totalMoney} VND</h3>
-                        <a href="checkout" class="btn btn-success w-25">Thanh toán</a>
+                                    <c:if test="${C.value.quantity <= 0}">
+                                        <c:set var="allQuantitiesValid" value="false" scope="session"/>
+                                    </c:if>
+
+                                </c:forEach>
+                                </tbody>
+                            </table>
+                            <h3>Tổng tiền: ${totalMoney} VND</h3>
+                        </form>
+                        <c:if test="${sessionScope.allQuantitiesValid}">
+                            <a href="checkout" class="btn btn-success w-25">Thanh toán</a>
+                        </c:if>
                     </c:otherwise>
                 </c:choose>
             </div>
